@@ -1,0 +1,29 @@
+﻿<Window x:Class="WPFApplicationDemo.TestOne"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFApplicationDemo"
+        mc:Ignorable="d"
+        Title="TestOne" Height="600" Width="800">
+    <StackPanel>
+        <WrapPanel>
+        <Button Width="100" Height="30" Command="{x:Static ApplicationCommands.Copy}"
+                Content="{Binding Path=Command.Text, RelativeSource={RelativeSource Self}}"
+                CommandTarget="{Binding ElementName=textBox}"/>
+        <Button Width="100" Height="30" Command="Cut"
+                Content="{Binding Path=Command.Text, RelativeSource={RelativeSource Self}}"
+                CommandTarget="{Binding ElementName=textBox}"/>
+        <Button Width="100" Height="30" Command="{x:Static ApplicationCommands.Paste}"
+                Content="{Binding Path=Command.Text, RelativeSource={RelativeSource Self}}"
+                CommandTarget="{Binding ElementName=textBox}"/>
+        <Button Width="100" Height="30" Command="{x:Static ApplicationCommands.Undo}"
+                Content="{Binding Path=Command.Text, RelativeSource={RelativeSource Self}}"
+                CommandTarget="{Binding ElementName=textBox}"/>
+        <Button Width="100" Height="30" Command="{x:Static ApplicationCommands.Redo}"
+                Content="{Binding Path=Command.Text, RelativeSource={RelativeSource Self}}"
+                CommandTarget="{Binding ElementName=textBox}"/>
+        </WrapPanel>
+        <TextBox Name="textBox" Height="100"></TextBox>
+    </StackPanel>
+</Window>

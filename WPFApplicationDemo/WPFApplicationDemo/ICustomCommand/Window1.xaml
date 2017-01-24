@@ -1,0 +1,26 @@
+﻿<Window x:Class="WPFApplicationDemo.ICustomCommand.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFApplicationDemo.ICustomCommand"
+        mc:Ignorable="d"
+        Title="Window1" Height="300" Width="300">
+    <Grid>
+        <StackPanel>
+            <WrapPanel>
+            <Border BorderBrush="Silver" BorderThickness="1" CornerRadius="5" Padding="5" >
+                <local:CommandSource x:Name="pasteSource" Cursor="Hand">
+                    <TextBlock>粘贴</TextBlock>
+                </local:CommandSource>
+            </Border>
+            <Border BorderBrush="Silver" BorderThickness="1" CornerRadius="5" Padding="5">
+            <local:CommandSource x:Name="clearSource" Cursor="Hand">
+                <TextBlock>清空</TextBlock>
+            </local:CommandSource>
+            </Border>
+            </WrapPanel>
+            <local:CommandTarget x:Name="target" Margin="0,0,-0.4,0"/>
+        </StackPanel>
+    </Grid>
+</Window>
